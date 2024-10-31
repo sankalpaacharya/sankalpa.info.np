@@ -1,6 +1,6 @@
 ---
 title: "My First Post"
-description: "This is my first blog, describing that i will be writing on this site"
+description: "Things I will write ✍️"
 tags: ["personal"]
 date: 2024-10-29
 ---

@@ -1,4 +1,5 @@
 ---
+import Hr from "@components/Hr.astro";
 const links = [
   {
     name: "Posts",
@@ -17,21 +18,23 @@ const links = [
 import Sanku from "./Sanku.astro";
 ---
 
-<nav class="flex justify-between items-center mb-5">
-  <Sanku />
-
-  <ul class="flex space-x-8 p-4 items-center">
-    {
-      links.map((field) => (
-        <li>
-          <a
-            href={field.link}
-            class="text-base underline-hover font-medium pb-1"
-          >
-            {field.name}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-</nav>
+<div>
+  <nav class="flex justify-between items-center mb-5">
+    <Sanku />
+    <ul class="flex space-x-8 p-4 items-center">
+      {
+        links.map((field) => (
+          <li>
+            <a
+              href={field.link}
+              class="text-base underline-hover font-medium pb-1"
+            >
+              {field.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <Hr />
+</div>

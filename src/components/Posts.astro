@@ -10,7 +10,7 @@ interface PostByYears {
 
 const posts = await getCollection("posts");
 const sortedPosts: PostByYears = {};
-posts.forEach((post) => {
+posts.forEach((post: CollectionEntry<"props">) => {
   const [year] = formatDate(post.data.date);
   if (sortedPosts[year]) {
     sortedPosts[year].push(post);
