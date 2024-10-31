@@ -1,0 +1,12 @@
+<footer class="flex justify-center">
+  <small
+    >Copyright &copy; <span id="copyright"></span> Sanku | All rights reserved</small
+  >
+</footer>
+
+<script>
+  const el = document.getElementById("copyright");
+  if (el) {
+    el.textContent = new Date().getFullYear().toString();
+  }
+</script>

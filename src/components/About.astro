@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="mt-20 space-y-10 md:text-md">
+  <div class="flex relative w-fit">
+    <h2 id="greet" class="text-5xl font-bold"></h2>
+    <span class="text-primary text-5xl"> !</span>
+  </div>
+  <div class="space-y-3">
+    <p>
+      Hi, I’m Sankalpa Acharya, a Computer Science and Engineering student from
+      Nepal 🇳🇵. I’m passionate 🤗 about writing computer programs that are
+      helpful and useful for others.
+    </p>
+    <div class="flex space-x-3 items-center">
+      <p>Social Links:</p>
+      <div class="space-x-2 flex items-center">
+        <a href="https://github.com/sankalpaacharya" target="_blank">
+          <Icon name="mdi:github" class="iconr" size={27} />
+        </a>
+        <a href="https://x.com/sankalpa_02" target="_blank">
+          <Icon name="mdi:twitter" class="iconr" size={27} />
+        </a>
+        <a href="https://linkedin/sankalpa02" target="_blank">
+          <Icon name="mdi:linkedin" class="iconr" size={27} />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const greetings = ["Hello", "Hola", "Bonjour", "Hallo", "Ciao", "Namaste"];
+  const randomIndex = Math.floor(Math.random() * greetings.length);
+  const greetElement = document.getElementById("greet");
+  if (greetElement) {
+    greetElement.innerText = greetings[randomIndex];
+  }
+</script>

@@ -1,7 +1,15 @@
 ---
 import MainLayout from "src/layouts/MainLayout.astro";
+import Hr from "@components/Hr.astro";
+import About from "@components/About.astro";
 ---
 
 <MainLayout>
-  <h1>this is sanku</h1>
+  <div>
+    <Hr />
+    <div class="p-4">
+      <About />
+    </div>
+    <Hr />
+  </div>
 </MainLayout>
