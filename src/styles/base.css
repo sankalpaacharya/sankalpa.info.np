@@ -57,8 +57,10 @@ footer{
     border-radius: 4px;
     padding: 3px;
     transition: background .2s ease-in-out;
+    text-underline-offset: 3px;
 }
-.squiggly:hover{
+
+a.squiggly:hover{
     background-color: #373636;
 }
 
@@ -74,5 +76,5 @@ footer{
   }
   
   .link:hover {
-    transform: scale(1.01); 
+    transform: scale(1.03); 
   }

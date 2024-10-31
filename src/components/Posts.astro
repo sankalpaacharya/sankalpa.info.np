@@ -1,33 +1,46 @@
 ---
 import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import PostCard from "./PostCard.astro";
-const months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
 import { formatDate } from "../utils/index";
 
-const posts = await getCollection("posts");
+interface PostByYears {
+  [year: string]: CollectionEntry<"posts">[];
+}
 
-console.log(formatDate(posts[0].data.date));
+const posts = await getCollection("posts");
+const sortedPosts: PostByYears = {};
+posts.forEach((post) => {
+  const [year] = formatDate(post.data.date);
+  if (sortedPosts[year]) {
+    sortedPosts[year].push(post);
+  } else {
+    sortedPosts[year] = [post];
+  }
+});
+
+const sortedPostsByYear = Object.fromEntries(
+  Object.entries(sortedPosts).sort(
+    ([yearA], [yearB]) => parseInt(yearB) - parseInt(yearA)
+  )
+);
 ---
 
 <div class="mt-5 flex flex-col space-y-5">
-  <div class="">
-    <h2 class="text-2xl flex font-semibold">2024</h2>
-    <PostCard
-      title="How do HTTP servers figure out Content-Length?"
-      date="17 july"
-    />
-  </div>
+  {
+    Object.entries(sortedPostsByYear)
+      .reverse()
+      .map(([year, yearPosts]) => (
+        <div>
+          <h2 class="text-2xl flex font-semibold">{year}</h2>
+          {yearPosts.map((post) => (
+            <PostCard
+              slug={post.slug}
+              title={post.data.title}
+              date={post.data.date}
+            />
+          ))}
+        </div>
+      ))
+  }
 </div>

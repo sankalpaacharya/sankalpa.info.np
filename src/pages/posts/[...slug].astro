@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import MainLayout from "src/layouts/MainLayout.astro";
+import { formatDate } from "src/utils";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const [year, month, day] = formatDate(post.data.date);
+---
+
+<MainLayout>
+  <div class="p-4 mt-5">
+    <h2 class="md:text-3xl text-2xl font-bold text-center">
+      {post.data.title}
+    </h2>
+    <p class="text-[#a5a5a5] mt-14 text-base">
+      Published {`${month} ${day}, ${year}`}
+    </p>
+  </div>
+</MainLayout>

@@ -1,15 +1,18 @@
 ---
+import { formatDate } from "../utils/index";
 type Props = {
   title: string;
-  date: string;
+  date: Date;
+  slug: string;
 };
-const { title, date } = Astro.props;
+const { title, date, slug } = Astro.props;
+const [_, month, day] = formatDate(date);
 ---
 
 <div class="post">
   <div class="mt-3 flex justify-between items-center">
-    <a href="" class="link">{title} </a>
-    <p>{date}</p>
+    <a href={`/posts/${slug}`} class="link">{title} </a>
+    <p>{`${month} ${day}`}</p>
   </div>
   <hr class="border-[#ffffff58] my-3" />
 </div>
