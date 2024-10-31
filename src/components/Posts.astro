@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import PostCard from "./PostCard.astro";
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+import { formatDate } from "../utils/index";
+
+const posts = await getCollection("posts");
+
+console.log(formatDate(posts[0].data.date));
+---
+
+<div class="mt-5 flex flex-col space-y-5">
+  <div class="">
+    <h2 class="text-2xl flex font-semibold">2024</h2>
+    <PostCard
+      title="How do HTTP servers figure out Content-Length?"
+      date="17 july"
+    />
+  </div>
+</div>
