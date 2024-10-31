@@ -10,6 +10,8 @@
 body{
     background-color: #1e1e1e;
     color: #e8e8e8;
+    word-break: break-word;
+    text-align: left;
 }
 
 
