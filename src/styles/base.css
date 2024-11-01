@@ -4,11 +4,12 @@
 
 :root {
     --primary-color: #fabd2f;
+    --muted: #e8e8e8;
 }
 
 body {
     background-color: #1e1e1e;
-    color: #e8e8e8 !important;
+    color: #e8e8e8;
     word-break: break-word;
     text-align: left;
 }
@@ -91,8 +92,56 @@ a.squiggly:hover {
     border-color: var(--primary-color);
 }
 
-
-    .prose {
-        @apply prose-h1:text-muted prose-p:text-muted 
-
+.prose {
+    & a,
+    & h1,
+    & h2,
+    & h3,
+    & p,
+    & code,
+    & blockquote 
+    & kbd{
+      color: var(--muted);
     }
+  }
+
+
+.prose a{
+    text-decoration: #e6ab20  underline;
+    border-radius: 4px;
+    color: #e6ab20;
+    padding: 3px;
+    transition: all .2s ease-in;
+    text-underline-offset: 5px;
+    display: inline-block; 
+}
+.prose a:hover{
+    transform: scale(1.04);
+}
+
+.prose code{
+
+}
+
+
+.prose kbd{
+    background-color: #3b3b3b;
+    border: 1px solid #3b3b3b;
+    border-radius: 4px;
+    margin-bottom: .4em;
+    color: var(--muted);
+    font-weight: 500;
+    font-size: .8em;
+    padding: 2px 4px;
+    font-family: jetbrains mono,monospace;
+    box-shadow: 2px 2px #2a2a2a;
+    transition: all 250ms,box-shadow 250ms;
+    display: inline-block;
+    font-weight: bold;
+    cursor: default;
+}
+
+.prose kbd:hover {
+    box-shadow: 0 0 #2a2a2a;
+    transform: translateY(2px);
+  }

@@ -34,8 +34,8 @@ const [year, month, day] = formatDate(post.data.date);
       </p>
     </div>
     <div class="mt-14 flex space-x-3">
-      <p class="text-[#a5a5a5] text-base flex items-center">
-        <Icon name="mdi:publish" class="mx-1" />
+      <p class="text-[#a5a5a5] text-sm flex items-center">
+        <Icon name="mdi:publish" class="" />
         Published {`${month} ${day}, ${year}`}
       </p>
       <a
@@ -46,7 +46,7 @@ const [year, month, day] = formatDate(post.data.date);
         Suggest Changes
       </a>
     </div>
-    <div class="mt-10">
+    <div class="mt-3">
       <Prose>
         <Content />
       </Prose>
