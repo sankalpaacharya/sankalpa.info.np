@@ -2,70 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-
-:root{
+:root {
     --primary-color: #fabd2f;
 }
 
-body{
+body {
     background-color: #1e1e1e;
-    color: #e8e8e8;
+    color: #e8e8e8 !important;
     word-break: break-word;
     text-align: left;
 }
 
-
-.mark{
+.mark {
     border: 2px solid red;
 }
 
-
-.underline-hover{
+.underline-hover {
     position: relative;
 }
 
-.underline-hover::after{
+.underline-hover::after {
     content: '';
     position: absolute;
     height: 3px;
     left: 0;
-    bottom: 0px;
+    bottom: 0;
     width: 0;
     background-color: var(--primary-color);
-    transition: width .4s ease-out;
+    transition: width 0.4s ease-out;
 }
 
-
-.underline-hover:hover::after{
+.underline-hover:hover::after {
     width: 100%;
 }
 
-.icon{
-    @apply  hover:text-primary cursor-pointer transition delay-0
-}
-.iconr{
-    @apply  hover:text-primary cursor-pointer transition delay-0 hover:rotate-12
+.icon {
+    @apply hover:text-primary cursor-pointer transition delay-0;
 }
 
+.iconr {
+    @apply hover:text-primary cursor-pointer transition delay-0 hover:rotate-12;
+}
 
-footer{
+footer {
     margin-top: auto;
 }
 
-.squiggly{
+.squiggly {
     text-decoration: var(--primary-color) wavy underline;
     border-radius: 4px;
     padding: 3px;
-    transition: background .2s ease-in-out;
+    transition: background 0.2s ease-in-out;
     text-underline-offset: 3px;
 }
 
-a.squiggly:hover{
+a.squiggly:hover {
     background-color: #373636;
 }
-
-
-
 
 .link {
     color: var(--primary-color); 
@@ -73,8 +66,33 @@ a.squiggly:hover{
     font-weight: 500;
     transition: font-weight 0.2s ease-in, transform 0.2s ease-in; 
     display: inline-block; 
-  }
-  
-  .link:hover {
+}
+
+.link:hover {
     transform: scale(1.03); 
-  }
+}
+
+.prose blockquote {
+    border-left: 2px solid var(--primary-color);
+    opacity: 0.5;
+}
+
+.prose th,
+.prose td {
+    border: 1px solid var(--primary-color);
+}
+
+.prose img {
+    border: 2px solid var(--primary-color);
+    margin: 0.5rem auto;
+}
+
+.prose hr {
+    border-color: var(--primary-color);
+}
+
+
+    .prose {
+        @apply prose-h1:text-muted prose-p:text-muted 
+
+    }

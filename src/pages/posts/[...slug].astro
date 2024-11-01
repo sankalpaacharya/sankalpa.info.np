@@ -1,8 +1,10 @@
 ---
+import { Icon } from "astro-icon/components";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import MainLayout from "src/layouts/MainLayout.astro";
 import { formatDate } from "src/utils";
+import Prose from "@components/Prose.astro";
 
 type Props = {
   post: CollectionEntry<"posts">;
@@ -31,8 +33,23 @@ const [year, month, day] = formatDate(post.data.date);
         {post.data.description}
       </p>
     </div>
-    <p class="text-[#a5a5a5] mt-14 text-base">
-      Published {`${month} ${day}, ${year}`}
-    </p>
+    <div class="mt-14 flex space-x-3">
+      <p class="text-[#a5a5a5] text-base flex items-center">
+        <Icon name="mdi:publish" class="mx-1" />
+        Published {`${month} ${day}, ${year}`}
+      </p>
+      <a
+        href=""
+        class="text-[#a5a5a5] text-sm hover:text-[#908f8f] flex items-center hover:underline"
+      >
+        <Icon name="mdi:pencil" class="mx-1" />
+        Suggest Changes
+      </a>
+    </div>
+    <div class="mt-10">
+      <Prose>
+        <Content />
+      </Prose>
+    </div>
   </div>
 </MainLayout>
