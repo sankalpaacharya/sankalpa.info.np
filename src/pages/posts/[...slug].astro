@@ -52,4 +52,27 @@ const [year, month, day] = formatDate(post.data.date);
       </Prose>
     </div>
   </div>
+
+  <script>
+    function addHeadingLinks() {
+      const prose = document.querySelector(".prose");
+      if (!prose) return;
+
+      const headings = Array.from(prose.querySelectorAll("h2, h3, h4, h5, h6"));
+
+      for (const heading of headings) {
+        heading.classList.add("group");
+        const link = document.createElement("a");
+        link.className =
+          "ml-1 opacity-0 text-base group-hover:opacity-100 focus:opacity-100";
+        link.href = "#" + heading.id;
+        const span = document.createElement("span");
+        span.ariaHidden = "true";
+        span.innerText = "#";
+        link.appendChild(span);
+        heading.appendChild(link);
+      }
+    }
+    addHeadingLinks();
+  </script>
 </MainLayout>

@@ -29,7 +29,9 @@ const { title = "Sanku" } = Astro.props;
       class="min-h-screen flex flex-col py-4 md:px-5 md:max-w-3xl mx-auto w-full"
     >
       <NavBar />
-      <slot />
+      <div class="mb-20">
+        <slot />
+      </div>
       <Footer />
     </main>
   </body>
