@@ -51,6 +51,15 @@ const [year, month, day] = formatDate(post.data.date);
         <Content />
       </Prose>
     </div>
+    <div class="mt-10 space-x-3">
+      {
+        post.data.tags.map((tag) => (
+          <span class="bg-[#2e2e2e] p-2 px-4 text-sm rounded-full cursor-pointer shadow-lg">
+            {tag}
+          </span>
+        ))
+      }
+    </div>
   </div>
 
   <script>

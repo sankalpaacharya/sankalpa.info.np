@@ -1,7 +1,7 @@
 ---
 title: "My First Post"
 description: "Things I Will Write ✍️"
-tags: ["personal"]
+tags: ["Personal", "astro"]
 date: 2024-11-01
 ---
 
