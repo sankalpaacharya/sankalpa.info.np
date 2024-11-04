@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "src/layouts/MainLayout.astro";
+const gists = await getCollection("gists");
+---
+
+<MainLayout>
+  <div class="px-4 mt-10 space-y-4">
+    <h2 class="font-semibold">
+      All Gists <span class="bg-gray-800 px-3 py-1 text-sm rounded-full">1</span
+      >
+    </h2>
+    <div>
+      {
+        gists.map((gist) => (
+          <a href={`gists/${gist.slug}`}>
+            <div class="text-sm font-semibold border shadow-lg p-3 rounded-lg border-[#3d444d]">
+              <p class="text-xl">{gist.data.title}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</MainLayout>

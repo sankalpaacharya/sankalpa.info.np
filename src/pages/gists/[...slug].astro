@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "src/layouts/MainLayout.astro";
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+import Prose from "@components/Prose.astro";
+
+type Props = {
+  gist: CollectionEntry<"gists">;
+};
+
+export async function getStaticPaths() {
+  const gists = await getCollection("gists");
+  return gists.map((gist: CollectionEntry<"gists">) => ({
+    params: { slug: gist.slug },
+    props: { gist },
+  }));
+}
+
+const { gist } = Astro.props;
+const { Content } = await gist.render();
+---
+
+<MainLayout>
+  <div class="px-4 mt-10">
+    <div
+      class="text-sm font-medium bg-[#11121483] border border-[#3d444dce] p-2 rounded-t-lg border-b-0"
+    >
+      <p class="flex text-primary gap-2 items-center">
+        <Icon name="mdi:file" class="text-white" />
+        {gist.id}
+      </p>
+    </div>
+    <div class="p-5 border border-[#3d444dce] rounded-b-lg">
+      <Prose>
+        <Content />
+      </Prose>
+    </div>
+  </div>
+</MainLayout>
