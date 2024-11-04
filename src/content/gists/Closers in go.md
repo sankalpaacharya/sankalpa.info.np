@@ -31,3 +31,43 @@ func main() {
 }
 
 ```
+
+## Goroutines
+
+```go title="goroutines.go"
+package main
+
+// func printSmth(name string) {
+// 	println(name)
+// }
+
+func main() {
+
+	myChannel := make(chan string)
+	myChannel2 := make(chan string)
+
+	go func() {
+		myChannel <- "data"
+	}()
+
+	go func() {
+		myChannel2 <- "cow"
+	}()
+
+	select {
+	case msgFromMyChannel := <-myChannel:
+		println(msgFromMyChannel)
+	case msgFromMyChannel2 := <-myChannel2:
+		println(msgFromMyChannel2)
+
+	}
+	// go printSmth("1")
+	// go printSmth("2")
+	// go printSmth("3")
+	// println(time.Second)
+	// time.Sleep(time.Second * 4)
+	// fmt.Println("this is me")
+
+}
+
+```
