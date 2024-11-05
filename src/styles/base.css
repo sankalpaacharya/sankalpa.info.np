@@ -88,6 +88,10 @@ a.squiggly:hover {
   margin: 0.5rem auto;
 }
 
+.prose ul,li{
+  color: var(--muted);
+}
+
 .prose code {
   background-color: #2e2e2e;
   padding: 0.1em 0.3em;
