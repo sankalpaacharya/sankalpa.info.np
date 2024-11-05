@@ -1,5 +1,5 @@
 ---
-title: "Closers in go"
+title: "Clousers in go"
 description: "understanding closers in go"
 tags: ["go", "prorgamming"]
 date: 2024-11-5
