@@ -7,7 +7,7 @@ date: 2024-11-05
 
 ## Slice
 
-A slice is a more flexible data structure than a traditional array; it is built on top of arrays and has a dynamic size, allowing it to as needed.
+A slice is a more flexible data structure than a traditional array; it is built on top of arrays and has a dynamic size, allowing it to grow as needed.
 
 ### Slice vs. Array
 
