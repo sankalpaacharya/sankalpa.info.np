@@ -57,7 +57,7 @@ The capacity of the slice increased. If you look at the line `s = append(s, 101)
 
 ### Creating a Slice with make
 
-You can also use the make function to create a slice:
+You can also use the `make` function to create a slice:
 
 ```go
 s := make([]int, 0, 5) // integer slice of length 0 and capacity 5

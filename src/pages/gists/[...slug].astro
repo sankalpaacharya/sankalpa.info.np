@@ -4,6 +4,7 @@ import MainLayout from "src/layouts/MainLayout.astro";
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
 import Prose from "@components/Prose.astro";
+import { formatDate } from "src/utils";
 
 type Props = {
   gist: CollectionEntry<"gists">;
@@ -19,17 +20,29 @@ export async function getStaticPaths() {
 
 const { gist } = Astro.props;
 const { Content } = await gist.render();
+const [year, month, day] = formatDate(gist.data.date);
+const rawURL =
+  "https://raw.githubusercontent.com/sankalpaacharya/sankalpa.info.np/refs/heads/main/src/content/gists/";
 ---
 
 <MainLayout>
   <div class="md:px-4 px-2 mt-10">
+    <p class="px-2 text-xs text-gray-400 mb-2">
+      {day}
+      {month}, {year}
+    </p>
     <div
-      class="text-sm font-medium bg-[#11121483] border border-[#3d444dce] p-2 rounded-t-lg border-b-0"
+      class="text-sm flex justify-between font-medium bg-[#11121483] border border-[#3d444dce] p-2 rounded-t-lg border-b-0"
     >
       <p class="flex text-primary gap-2 items-center">
         <Icon name="mdi:file" class="text-white" />
         {gist.id}
       </p>
+      <a
+        href={`${rawURL}${gist.id}`}
+        target="_blank"
+        class="p-1 text-xs border border-[#3d444dce] rounded">Raw</a
+      >
     </div>
     <div class="p-5 border border-[#3d444dce] rounded-b-lg">
       <Prose>
