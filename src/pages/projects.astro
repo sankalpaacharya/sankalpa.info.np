@@ -1,5 +1,36 @@
 ---
 import MainLayout from "src/layouts/MainLayout.astro";
+import Project from "@components/Project.astro";
+import repoDeleterImage from "../images/repo-deleter.jpeg";
+
+type Project = {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  link?: string;
+};
+
+const projects: Project[] = [
+  {
+    title: "Repo Deleter",
+    description: "Delete repository with a few clicks",
+    image: repoDeleterImage,
+    link: "https://github.com/sankalpa-acharya/repo-deleter",
+  },
+];
 ---
 
-<MainLayout> <div class="p-4">🤗 will add soon</div></MainLayout>
+<MainLayout>
+  <div class="mt-10 px-3">
+    {
+      projects.map((project) => (
+        <Project
+          title={project.title}
+          description={project.description}
+          image={project.image}
+          link={project.link}
+        />
+      ))
+    }
+  </div>
+</MainLayout>
