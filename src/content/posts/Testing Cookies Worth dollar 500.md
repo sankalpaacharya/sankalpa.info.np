@@ -1,5 +1,5 @@
 ---
-title: "Testing Cookies worth $500"
+title: "Testing Cookies worth $500 🍪 "
 description: "finding IDOR 💰"
 date: 2021-06-30
 tags: ["bug bounty", "security"]
