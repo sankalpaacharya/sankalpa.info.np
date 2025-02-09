@@ -20,7 +20,7 @@ While searching for better ways to streamline my workflow, I stumbled upon [prim
 <img src="https://i.imgflip.com/9jiw26.jpg"/>
 
 ### [i3](https://i3wm.org/)
-I3 is a tiling [window manager](https://wiki.archlinux.org/title/Window_manager), unlike gnome desktop environment or windows. In i3 your windows are not floating around but rather take the full space of the screen and tile to each other. 
+I3 is a tiling window manager - a specialized type of window management system that automatically arranges windows in non-overlapping tiles. This is fundamentally different from traditional desktop environments like GNOME or Windows, where windows typically float and overlap freely.
 <img src="https://i.imgflip.com/9jj5d4.jpg">
 
 Since i3 is just a window manager and not a desktop environment, it doesn't come with a lot of things by default. You don't get a beautiful status bar where you can increase and decrease the volume and brightness, no quick UI to connect to wifi, or application launcher showing application icons.
