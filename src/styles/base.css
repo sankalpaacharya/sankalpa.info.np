@@ -138,6 +138,10 @@ a.squiggly:hover {
   transform: scale(1.04);
 }
 
+.prose strong{
+  color: gray;
+}
+
 .prose kbd {
   background-color: #3b3b3b;
   border: 1px solid #3b3b3b;
