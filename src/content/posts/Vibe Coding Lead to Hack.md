@@ -5,7 +5,7 @@ date: 2025-09-12
 tags: ["vibe-coding", "college"]
 ---
 
-> This story is shared purely for educational purposes. Sensitive details have been generalized to prevent misuse. The issue was responsibly reported to the concerned authorities and has since been fixed. My only intention is to highlight the importance of basic security practices, not to blame or defame anyone.
+> Disclaimer: This story is shared purely for educational purposes. Sensitive details have been generalized to prevent misuse. The issue was responsibly reported to the concerned authorities and has since been fixed. My only intention is to highlight the importance of basic security practices, not to blame or defame anyone.
 
 From Minor Project to Major Chaos,
 
